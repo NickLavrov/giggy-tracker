@@ -17,7 +17,6 @@
 'use strict';
 
 module.exports = function(deployment) {
-  deployment.validatesPresenceOf('circleSha');
   deployment.validatesPresenceOf('buildStart');
   deployment.validatesPresenceOf('deployStart');
   deployment.validatesPresenceOf('deployFinish');

@@ -50,9 +50,6 @@ models:
       - name: id
         type: number
         id: true
-      - name: circleSha
-        type: string
-        required: true
       - name: buildStart
         type: date
         required: true

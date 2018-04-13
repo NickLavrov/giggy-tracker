@@ -2,7 +2,7 @@
 # generate-deploy.lock
 
 version: 2.1.1
-commit_hash: d2f39b01af670b33aff7c3fbc4e49adcacc74e76
+commit_hash: 3ba5b0f7c5eb813fbede3d543e78450037a1e53d
 tree:
   name: deploy
   children:
@@ -36,6 +36,18 @@ tree:
       type: directory
     - name: giggy-tracker-staging
       children:
+        - name: .config
+          size: 0
+          extension: ''
+          type: file
+          hash: da39a3ee5e6b4b0d3255bfef95601890afd80709
+          relative: ./giggy-tracker-staging/.config
+        - name: .env
+          size: 0
+          extension: ''
+          type: file
+          hash: da39a3ee5e6b4b0d3255bfef95601890afd80709
+          relative: ./giggy-tracker-staging/.env
         - name: giggy-tracker-api-service.yaml
           size: 677
           extension: .yaml
