@@ -17,7 +17,25 @@
 'use strict';
 
 module.exports = {
-  fileDs: {
+  email: {
+    connector: 'mail',
+    transports: [
+      {
+        type: 'smtp',
+        host: process.env.EMAIL_HOST,
+        secure: (process.env.EMAIL_SECURE !== 'false'),
+        port: process.env.EMAIL_PORT,
+        tls: {
+          rejectUnauthorized: false,
+        },
+        auth: {
+          user: process.env.EMAIL_USER,
+          pass: process.env.EMAIL_PASSWORD,
+        },
+      },
+    ],
+  },
+  db: {
     connector: 'memory',
     file: 'db.json',
   },

@@ -1,24 +1,80 @@
 {
   "name": "deployment",
   "properties": {
+    "id": {
+      "id": true,
+      "type": "number"
+    },
     "circleSha": {
+      "required": true,
       "type": "string"
     },
     "buildStart": {
+      "required": true,
       "type": "date"
     },
     "deployStart": {
+      "required": true,
       "type": "date"
     },
-    "deployComplete": {
+    "deployFinish": {
+      "required": true,
       "type": "date"
+    },
+    "name": {
+      "min": 2,
+      "max": 50,
+      "required": true,
+      "type": "string"
+    },
+    "description": {
+      "max": 1000,
+      "type": "string"
     }
   },
   "hidden": [],
-  "relations": {},
+  "relations": {
+    "seller": {
+      "primaryKey": "id",
+      "model": "user",
+      "type": "belongsTo"
+    }
+  },
   "indexes": {},
   "methods": {},
-  "acls": [],
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    },
+    {
+      "property": "create",
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    }
+  ],
   "mixins": {
     "SetupRemoteMethods": {}
   }

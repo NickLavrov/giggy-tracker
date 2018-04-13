@@ -1,10 +1,26 @@
 {
   "ids": {
-    "deployment": 2
+    "deployment": 1,
+    "user": 2,
+    "accessToken": 2,
+    "role": 1,
+    "roleMapping": 1,
+    "ACL": 1,
+    "userCredential": 1,
+    "userIdentity": 1
   },
   "models": {
-    "deployment": {
-      "1": "{\"circleSha\":\"string\",\"buildStart\":\"2018-04-13T02:05:51.047Z\",\"deployStart\":\"2018-04-13T02:05:51.047Z\",\"deployComplete\":\"2018-04-13T02:05:51.047Z\",\"id\":1}"
-    }
+    "deployment": {},
+    "user": {
+      "1": "{\"email\":\"nick@gigster.com\",\"password\":\"$2a$10$qOB3frNM3SRojncRIHp/8uwpBs0auxmcN3Ykspu/LGRHhXNzUjs6q\",\"firstName\":\"CircleCi\",\"lastName\":\"CircleCi\",\"isBuyer\":true,\"isSeller\":true,\"id\":1}"
+    },
+    "accessToken": {
+      "yEZN2ozFFb2ZlyR3ZDcPHRxigusekrD3CTSKSyijKlDMDMH8g68yaS3n2j5ZuWQs": "{\"id\":\"yEZN2ozFFb2ZlyR3ZDcPHRxigusekrD3CTSKSyijKlDMDMH8g68yaS3n2j5ZuWQs\",\"ttl\":1209600,\"created\":\"2018-04-13T05:36:38.394Z\",\"userId\":1}"
+    },
+    "role": {},
+    "roleMapping": {},
+    "ACL": {},
+    "userCredential": {},
+    "userIdentity": {}
   }
 }

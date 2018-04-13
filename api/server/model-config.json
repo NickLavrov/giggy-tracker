@@ -1,11 +1,18 @@
 {
   "_meta": {
     "sources": [
+      "../node_modules/loopback-component-passport/lib/models",
       "loopback/common/models",
       "loopback/server/models",
       "../common/models",
       "./models",
-      "./models/deployment"
+      "./models/deployment",
+      "./models/user",
+      "./models/accessToken",
+      "./models/role",
+      "./models/roleMapping",
+      "./models/userCredential",
+      "./models/userIdentity"
     ],
     "mixins": [
       "loopback/common/mixins",
@@ -16,7 +23,39 @@
     ]
   },
   "deployment": {
-    "dataSource": "fileDs",
+    "dataSource": "db",
     "public": true
+  },
+  "user": {
+    "dataSource": "db",
+    "public": true
+  },
+  "accessToken": {
+    "dataSource": "db",
+    "public": false
+  },
+  "role": {
+    "dataSource": "db",
+    "public": false
+  },
+  "roleMapping": {
+    "dataSource": "db",
+    "public": false
+  },
+  "userCredential": {
+    "dataSource": "db",
+    "public": false
+  },
+  "userIdentity": {
+    "dataSource": "db",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Email": {
+    "dataSource": "email",
+    "public": false
   }
 }

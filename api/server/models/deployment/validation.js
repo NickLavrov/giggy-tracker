@@ -17,4 +17,12 @@
 'use strict';
 
 module.exports = function(deployment) {
+  deployment.validatesPresenceOf('circleSha');
+  deployment.validatesPresenceOf('buildStart');
+  deployment.validatesPresenceOf('deployStart');
+  deployment.validatesPresenceOf('deployFinish');
+  deployment.validatesLengthOf('name', {max: 50});
+  deployment.validatesLengthOf('name', {min: 2});
+  deployment.validatesPresenceOf('name');
+  deployment.validatesLengthOf('description', {max: 1000});
 };

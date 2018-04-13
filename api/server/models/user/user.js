@@ -16,9 +16,12 @@
 
 'use strict';
 
-module.exports = function(server) {
-  // Install a `/` route that returns server status
-  var router = server.loopback.Router();
-  router.get('/status', server.loopback.status());
-  server.use(router);
+const validation = require('./validation');
+const verify = require('./verify');
+const reset = require('./reset');
+
+module.exports = function(user) {
+  validation(user);
+  verify(user);
+  reset(user);
 };
