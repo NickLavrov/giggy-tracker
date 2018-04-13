@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: giggy-tracker-api
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: giggy-tracker-api
+    spec:
+      containers:
+        - name: giggy-tracker-api
+          image: 569325332953.dkr.ecr.us-east-1.amazonaws.com/giggy-tracker-api:__TAG__
+          imagePullPolicy: Always
+          envFrom:
+            - secretRef:
+                name: giggy-tracker-api-secrets
+            - configMapRef:
+                name: giggy-tracker-api-configmap
+          ports:
+            - containerPort: 3000

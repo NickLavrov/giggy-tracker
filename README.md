@@ -1,2 +1,3 @@
 # giggy-tracker
-Track deployment update times for giggy in circleci
+
+track times to deploy giggy on circleci

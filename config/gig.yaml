@@ -1,0 +1,69 @@
+schema: 'https://schema.gigster.com/schemas/cli/2.0.0/gig.yaml'
+version: 2.0.0
+name: giggy-tracker
+description: track times to deploy giggy on circleci
+modules:
+  - name: marketplace-schema
+    location: 'npm:@gigster/module-marketplace-schema@1.1.6'
+    spec:
+      type: goods
+      model: deployment
+blocks:
+  - name: api
+    location: 'npm:@gigster/block-loopback@1.2.2'
+    spec: {}
+    modules:
+      - name: loopback-models
+        location: 'npm:@gigster/module-loopback-models@1.1.2'
+        spec: {}
+      - name: loopback-authentication
+        location: 'npm:@gigster/module-loopback-authentication@1.1.2'
+        spec:
+          webEnabled: true
+          emailVerificationRequired: false
+          providers:
+            local: {}
+            facebook-login:
+              clientID: FACEBOOK_CLIENT_ID
+              clientSecret: FACEBOOK_CLIENT_SECRET
+      - name: loopback-elasticsearch
+        location: 'npm:@gigster/module-loopback-elasticsearch@1.1.6'
+        spec:
+          models: []
+      - name: node-docker
+        location: 'npm:@gigster/module-node-docker@1.1.5'
+        spec: {}
+datasources:
+  - name: email
+    type: email
+    spec:
+      host: EMAIL_HOST
+      port: EMAIL_PORT
+      secure: EMAIL_SECURE
+      user: EMAIL_USER
+      password: EMAIL_PASSWORD
+  - name: db
+    type: file
+models:
+  - name: deployment
+    properties:
+      - name: id
+        type: number
+        id: true
+      - name: circleSha
+        type: string
+        required: true
+      - name: buildStart
+        type: date
+        required: true
+      - name: deployStart
+        type: date
+        required: true
+      - name: deployFinish
+        type: date
+        required: true
+    relations:
+      - name: seller
+        type: belongsTo
+        model: user
+        primaryKey: id
