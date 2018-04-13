@@ -1,0 +1,10 @@
+{
+  "ids": {
+    "deployment": 2
+  },
+  "models": {
+    "deployment": {
+      "1": "{\"circleSha\":\"string\",\"buildStart\":\"2018-04-13T02:05:51.047Z\",\"deployStart\":\"2018-04-13T02:05:51.047Z\",\"deployComplete\":\"2018-04-13T02:05:51.047Z\",\"id\":1}"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "deployment",
+  "properties": {
+    "circleSha": {
+      "type": "string"
+    },
+    "buildStart": {
+      "type": "date"
+    },
+    "deployStart": {
+      "type": "date"
+    },
+    "deployComplete": {
+      "type": "date"
+    }
+  },
+  "hidden": [],
+  "relations": {},
+  "indexes": {},
+  "methods": {},
+  "acls": [],
+  "mixins": {
+    "SetupRemoteMethods": {}
+  }
+}
