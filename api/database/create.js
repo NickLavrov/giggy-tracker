@@ -22,7 +22,7 @@
 const server = require('../server/server.js');
 
 // datasources names is provided by the gig.yaml
-const datasources = [];
+const datasources = ['postgresqlDs'];
 datasources.forEach(name => {
   const datasource = server.dataSources[name];
   if (datasource) {

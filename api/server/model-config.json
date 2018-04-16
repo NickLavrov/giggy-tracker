@@ -23,31 +23,31 @@
     ]
   },
   "deployment": {
-    "dataSource": "db",
+    "dataSource": "postgresqlDs",
     "public": true
   },
   "user": {
-    "dataSource": "db",
+    "dataSource": "postgresqlDs",
     "public": true
   },
   "accessToken": {
-    "dataSource": "db",
+    "dataSource": "postgresqlDs",
     "public": false
   },
   "role": {
-    "dataSource": "db",
+    "dataSource": "postgresqlDs",
     "public": false
   },
   "roleMapping": {
-    "dataSource": "db",
+    "dataSource": "postgresqlDs",
     "public": false
   },
   "userCredential": {
-    "dataSource": "db",
+    "dataSource": "postgresqlDs",
     "public": false
   },
   "userIdentity": {
-    "dataSource": "db",
+    "dataSource": "postgresqlDs",
     "public": false
   },
   "ACL": {

@@ -15,7 +15,8 @@ blocks:
     modules:
       - name: loopback-models
         location: 'npm:@gigster/module-loopback-models@1.1.2'
-        spec: {}
+        spec:
+          defaultDatasource: postgresqlDs
       - name: loopback-authentication
         location: 'npm:@gigster/module-loopback-authentication@1.1.2'
         spec:
@@ -44,6 +45,14 @@ datasources:
       password: EMAIL_PASSWORD
   - name: db
     type: file
+  - name: postgresqlDs
+    type: postgresql
+    spec:
+      host: DATABASE_POSTGRESQL_HOST
+      port: DATABASE_POSTGRESQL_PORT
+      database: DATABASE_POSTGRESQL_DATABASE
+      user: DATABASE_POSTGRESQL_USER
+      password: DATABASE_POSTGRESQL_PASSWORD
 models:
   - name: deployment
     properties:
@@ -305,6 +314,26 @@ environments:
     blocks:
       - api
   - name: EMAIL_PASSWORD
+    required: true
+    blocks:
+      - api
+  - name: DATABASE_POSTGRESQL_HOST
+    required: true
+    blocks:
+      - api
+  - name: DATABASE_POSTGRESQL_PORT
+    required: true
+    blocks:
+      - api
+  - name: DATABASE_POSTGRESQL_DATABASE
+    required: true
+    blocks:
+      - api
+  - name: DATABASE_POSTGRESQL_USER
+    required: true
+    blocks:
+      - api
+  - name: DATABASE_POSTGRESQL_PASSWORD
     required: true
     blocks:
       - api
