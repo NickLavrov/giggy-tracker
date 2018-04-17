@@ -3,7 +3,8 @@
   "properties": {
     "id": {
       "id": true,
-      "type": "number"
+      "type": "number",
+      "generated": true
     },
     "buildStart": {
       "required": true,

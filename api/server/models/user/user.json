@@ -3,7 +3,8 @@
   "properties": {
     "id": {
       "id": true,
-      "type": "number"
+      "type": "number",
+      "generated": "true"
     },
     "email": {
       "required": true,
@@ -97,13 +98,6 @@
       "permission": "ALLOW"
     },
     {
-      "property": "create",
-      "accessType": "WRITE",
-      "principalType": "ROLE",
-      "principalId": "$unauthenticated",
-      "permission": "ALLOW"
-    },
-    {
       "property": "update",
       "accessType": "WRITE",
       "principalType": "ROLE",
@@ -118,7 +112,11 @@
     }
   ],
   "mixins": {
-    "SetupRemoteMethods": {}
+    "SetupRemoteMethods": {
+      "disableAllExcept": [
+        "find"
+      ]
+    }
   },
   "plural": "users",
   "base": "User",

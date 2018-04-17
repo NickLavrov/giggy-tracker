@@ -17,6 +17,11 @@ blocks:
         location: 'npm:@gigster/module-loopback-models@1.1.2'
         spec:
           defaultDatasource: postgresqlDs
+          models:
+            - name: user
+              methods:
+                enabled:
+                  - find
       - name: loopback-authentication
         location: 'npm:@gigster/module-loopback-authentication@1.1.2'
         spec:

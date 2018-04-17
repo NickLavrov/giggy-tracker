@@ -2,7 +2,7 @@
 # generate-deploy.lock
 
 version: 2.1.1
-commit_hash: 59e53a3dd39642d646463ca1ef12a376a3ae3ad8
+commit_hash: 73da25e254c9bd5e556ea429d1cb8f5d984c16a9
 tree:
   name: deploy
   children:
@@ -43,10 +43,10 @@ tree:
           hash: da39a3ee5e6b4b0d3255bfef95601890afd80709
           relative: ./giggy-tracker-staging/.config
         - name: .env
-          size: 0
+          size: 205
           extension: ''
           type: file
-          hash: da39a3ee5e6b4b0d3255bfef95601890afd80709
+          hash: 814bf8857bfb90fbbc2cdeadb6d0c914f2ddb1fc
           relative: ./giggy-tracker-staging/.env
         - name: giggy-tracker-api-service.yaml
           size: 677
@@ -54,7 +54,7 @@ tree:
           type: file
           hash: bb3cc2ef433f55ed9f3898eddb81830b71836a32
           relative: ./giggy-tracker-staging/giggy-tracker-api-service.yaml
-      size: 677
+      size: 882
       type: directory
     - name: terraform
       children:
@@ -72,5 +72,5 @@ tree:
           relative: ./terraform/ecr.tf
       size: 323
       type: directory
-  size: 4302
+  size: 4507
   type: directory
